@@ -11,7 +11,6 @@
  Add the library to Arduino.
 
  *Determining Seven Segment Pins*
- To define pins you can write this statement:
  ```cpp
  int pins[] = {2,3,4,5,6,7,8};//determining what pins of arduino connected to 7-segment
  ```
