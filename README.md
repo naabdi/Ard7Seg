@@ -10,13 +10,13 @@
  Download the zip file.
  Add the library to Arduino.
 
- *Determining Seven Segment Pins*
+ ## *Determining Seven Segment Pins*
  
  Determining what pins of arduino connected to 7-segment
  
  form left to right: {a,b,c,d,e,f,g}
  ```cpp
- int pins[] = {2,3,4,5,6,7,8};//
+ int pins[] = {2,3,4,5,6,7,8};
  ```
 
  *Making Seven Segment instance*
