@@ -6,7 +6,7 @@ class SevSeg
 {
     public:
         SevSeg(int pins[7], char mode);
-        void Write(char inputNum);
+        void Write(int inputNum);
     private:
         int _pins[7];
         char _mode;
