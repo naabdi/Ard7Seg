@@ -31,4 +31,13 @@
  ```cpp
  mysegment.Write('5');//for characters
  ```
+ *Test 7-Segment LEDs*
+ ```cpp
+ mysegment.LampTest();
+ ```
+ *Turn off 7-Segment LEDs*
+ ```cpp
+ mysegment.TurnOff();
+ ```
+ 
  
