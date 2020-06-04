@@ -17,15 +17,18 @@
 
  *Making Seven Segment object*
  ```cpp
- SevSeg mysegment = SeveSeg(pins[],'A');//for common anode
+ SevSeg mysegment = SeveSeg(pins,'A');//for common anode
 
- SevSeg mysegment = SeveSeg(pins[],'C');//for common cathod
+ SevSeg mysegment = SeveSeg(pins,'C');//for common cathod
  ```
 
  *Writing to Seven Segment*
+ Show integers
  ```cpp
  mysegment.Write(5);//for integers
-
+ ```
+ Show characters
+ ```cpp
  mysegment.Write('5');//for characters
  ```
  
