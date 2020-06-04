@@ -8,6 +8,7 @@ class SevSeg
         SevSeg(int pins[], char);
         void Write(int);
         void LampTest();
+        void TurnOff();
     private:
         int _pins[7];
         char _mode;
