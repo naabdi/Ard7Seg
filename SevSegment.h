@@ -5,11 +5,13 @@
 class SevSeg
 {
     public:
-        SevSeg(int pins[7], char mode);
-        void Write(int inputNum);
+        SevSeg(int pins[], char);
+        void Write(int);
+        void LampTest();
     private:
         int _pins[7];
         char _mode;
+        void ShowNum(int);
 };
 
 #endif

@@ -12,75 +12,46 @@ SevSeg::SevSeg(int pins[7], char mode)
 
     void SevSeg::Write(int inputNum)
     {
-      int num;
-      size_t i;
       if (inputNum > 9){inputNum = inputNum - '0';}
-      if(_mode =='A'){
-        switch (inputNum) {
-            case 0:
-    num = 0xC0;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 1:
-      num = 0xF9;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 2:
-      num = 0xA4;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 3:
-      num = 0xB0;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 4:
-      num = 0x99;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 5:
-      num = 0x92;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 6:
-      num = 0x82;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 7:
-      num = 0xF8;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 8:
-      num = 0x80;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
-      case 9:
-      num = 0x90;
-        for (i = 0;i<7;i++) {
-           digitalWrite(_pins[i],bitRead(num,i));
-          }
-      break;
+      if(_mode =='A')
+	  {
+        switch (inputNum)
+		{
+    case 0:
+		  ShowNum(0xC0);
+		break;
+		case 1:
+		  ShowNum(0xC0);
+		break;
+		case 2:
+		  ShowNum(0xA4);
+		break;
+		case 3:
+		  ShowNum(0xB0);
+		break;
+		case 4:
+        ShowNum(0x99);
+		break;
+		case 5:
+        ShowNum(0x92);
+		break;
+		case 6:
+        ShowNum(0x82);
+		break;
+		case 7:
+        ShowNum(0xF8);
+		break;
+		case 8:
+        ShowNum(0x80);
+		break;
+		case 9:
+        ShowNum(0x90);
+		break;
   }
 
       }
       else if(_mode == 'C') {
+        int num;
           switch (inputNum) {
     case '0':case 0:
     num = 0x3F;
@@ -146,3 +117,15 @@ SevSeg::SevSeg(int pins[7], char mode)
 
       }
     }
+void SevSeg::ShowNum(int number)
+{
+	size_t i;
+	for (i = 0;i<7;i++)
+		digitalWrite(_pins[i],bitRead(number,i));
+}
+
+void SevSeg::LampTest()
+{
+	if (_mode == 'A') ShowNum(0x00);
+	if (_mode == 'C') ShowNum(0xFF);
+}
