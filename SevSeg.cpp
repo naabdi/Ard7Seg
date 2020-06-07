@@ -21,7 +21,7 @@ void SevSeg::Write(int inputNum)
 		  ShowNum(0xC0);
 		break;
 		case 1:
-		  ShowNum(0xC0);
+		  ShowNum(0xF9);
 		break;
 		case 2:
 		  ShowNum(0xA4);
